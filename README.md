@@ -1,5 +1,6 @@
 # EPHEMERAL-DH-KEY-EXCHANGE
-Bir önceki yazımda DH anahtar değişiminden, işleyişinden, nasıl anahtar değişimi yapıldığından ve anahtarın nasıl oluşturulduğundan bahsetmiştim. Eğer okumadıysanız http://www.blog.tolgaakkapulu.com/diffie-hellman-anahtar-degisimi.php sayfasından ilgili yazıyı okuyabilir ve kodları anlamlandırabilirsiniz.
-<br><br>
+
 <b>Ephemeral DH</b><br>
-Ephemeral DH statik yani klasik DH’dan farklıdır. Statik DH uzun süre boyunca her oturumda aynı oturum anahtarını elde edip bu oturum anahtarını kullanıyor. Zamanla çeşitli algoritmaların gelişmesiyle birlikte bu anahtarların çözülebilmesi sağlanabiliyor. Ayrıca saldırgan bir kere oturum anahtarını ele geçirmesiyle birlikte geçmişe dönük yapılan bütün gizli görüşmeleri bu oturum anahtarı vasıtasıyla ele geçirip deşifre edebiliyor. Ephemeral DH’da ise farklı oturumlarda farklı oturum anahtarları elde edilmesini sağlıyor. Böylelikle saldırgan bir şekilde oturum anahtarını elde etse dahi geçmişe dönük hiçbir bir bilgiye erişim sağlayamıyor. Bu da Forward Secrecy (FS) iletim gizliliğini sağlıyor.
+Ephemeral DH is different from static, ie classical DH. Static DH obtains the same session key in each session for a long time and uses this session key. With the development of various algorithms over time, these keys can be solved. In addition, once the attacker has the session key, he can capture and decrypt all secret conversations made in the past through this session key. In Ephemeral DH, it provides obtaining different session keys in different sessions. Thus, even if he aggressively obtains the session key, he cannot access any historical information. This ensures Forward Secrecy (FS).
+<br><br>
+Codes has been compiled in the C programming language and is written for the practicalization of the Ephemeral Diffie Hellman algorithm.
